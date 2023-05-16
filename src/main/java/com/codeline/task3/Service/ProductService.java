@@ -39,6 +39,10 @@ public class ProductService {
         Inventory inventory = inventoryRepository.findById(request.getInventoryId()).get();
         product.setInventory(inventory);
 
+
+
+
+        
         product.setIsActive(true);
         product.setCreatedDate(new Date());
         productRepository.save(product);
