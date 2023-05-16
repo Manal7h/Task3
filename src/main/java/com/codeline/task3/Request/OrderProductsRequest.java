@@ -7,9 +7,9 @@ import lombok.Setter;
 @Getter
 @Setter
 @Data
-public class OrderRequest {
+public class OrderProductsRequest {
 
-    Integer orderId;
+    Integer orderProductsId;
     Integer quantity;
     Integer reorderThreshold;
     Integer customerId;

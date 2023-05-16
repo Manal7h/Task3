@@ -5,7 +5,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Getter
 @Setter
@@ -31,8 +30,8 @@ public class Product extends BaseEntity {
     Inventory inventory;
 
     @ManyToOne //many product one order
-    @JoinColumn(name = "order_id", referencedColumnName = "id")
-    Order order;
+    @JoinColumn(name = "orderProducts_id", referencedColumnName = "id")
+    OrderProducts orderProducts;
 
 
 

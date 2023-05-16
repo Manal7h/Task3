@@ -14,7 +14,7 @@ public class ProductRequest {
     String price;
     Integer quantityAvailable;
 
-    Integer orderId;
+    Integer orderProductsId;
     Integer inventoryId;
 
 

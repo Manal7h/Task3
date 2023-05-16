@@ -10,12 +10,12 @@ import javax.persistence.*;
 @Setter
 @Data
 @Entity
-@Table(name = "Orders")
-public class Order extends BaseEntity{
+
+public class OrderProducts extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    Integer orderId;
+    Integer orderProductsId;
     Integer quantity;
     Integer reorderThreshold;
 
