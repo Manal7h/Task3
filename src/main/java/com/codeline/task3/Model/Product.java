@@ -34,4 +34,6 @@ public class Product extends BaseEntity {
     @JoinColumn(name = "order_id", referencedColumnName = "id")
     Order order;
 
+
+
 }

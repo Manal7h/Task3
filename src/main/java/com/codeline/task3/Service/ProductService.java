@@ -4,11 +4,11 @@ import com.codeline.task3.Model.Ingredient;
 import com.codeline.task3.Model.Inventory;
 import com.codeline.task3.Model.Order;
 import com.codeline.task3.Model.Product;
+import com.codeline.task3.Repository.IngredientRepository;
 import com.codeline.task3.Repository.InventoryRepository;
 import com.codeline.task3.Repository.OrderRepository;
 import com.codeline.task3.Repository.ProductRepository;
 import com.codeline.task3.Request.ProductRequest;
-import com.sun.istack.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,24 +25,15 @@ public class ProductService {
 
 
 
-
     public String createProduct(ProductRequest request) {
         Product product = new Product();
         product.setProductName(request.getProductName());
         product.setPrice(request.getPrice());
         product.setQuantityAvailable(request.getQuantityAvailable());
-
-
-
         Order order = orderRepository.findById(request.getOrderId()).get();
         product.setOrder(order);
         Inventory inventory = inventoryRepository.findById(request.getInventoryId()).get();
         product.setInventory(inventory);
-
-
-
-
-        
         product.setIsActive(true);
         product.setCreatedDate(new Date());
         productRepository.save(product);

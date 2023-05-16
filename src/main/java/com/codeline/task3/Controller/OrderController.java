@@ -1,11 +1,8 @@
 package com.codeline.task3.Controller;
 
-import com.codeline.task3.Request.OrderRequest;
 import com.codeline.task3.Service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
