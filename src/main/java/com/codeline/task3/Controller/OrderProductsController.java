@@ -1,6 +1,7 @@
 package com.codeline.task3.Controller;
 
 import com.codeline.task3.Request.OrderProductsRequest;
+import com.codeline.task3.Request.ProductRequest;
 import com.codeline.task3.Response.InventoryResponse;
 import com.codeline.task3.Response.OrderProductsResponse;
 import com.codeline.task3.Service.OrderProductsService;
@@ -37,5 +38,15 @@ public class OrderProductsController {
     public OrderProductsResponse getOrderProductsById(@RequestParam Integer orderProductsId) {
         OrderProductsResponse orderProductsResponse = orderProductsService.getOrderProductsById(orderProductsId);
         return orderProductsResponse;
+    }
+
+    @RequestMapping(value = "/deleteOrderProductsById", method = RequestMethod.GET)
+    public String deleteOrderProductsById(OrderProductsRequest orderProductsRequest){
+        try {
+            orderProductsService.deleteOrderProductsById(orderProductsRequest);
+        } catch (Exception e) {
+            return "Failed Delete";
+        }
+        return "Delete Successfully";
     }
 }
