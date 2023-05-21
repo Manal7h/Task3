@@ -1,12 +1,13 @@
 package com.codeline.task3.Controller;
 
 import com.codeline.task3.Request.InventoryRequest;
+import com.codeline.task3.Response.CustomerResponse;
+import com.codeline.task3.Response.InventoryResponse;
 import com.codeline.task3.Service.InventoryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 
@@ -24,5 +25,18 @@ public class InventoryController {
             return "Failed create";
         }
         return "create Successfully";
+    }
+
+
+    @RequestMapping(value = "/getAllInventory" , method = RequestMethod.GET)
+    public List<InventoryResponse> getAllInventory() {
+        List<InventoryResponse> inventory = inventoryService.getAllInventory();
+        return inventory;
+    }
+
+    @RequestMapping(value = "/getInventoryById" , method = RequestMethod.GET)
+    public InventoryResponse getInventoryById(@RequestParam Integer inventoryId) {
+        InventoryResponse inventoryResponse = inventoryService.getInventoryById(inventoryId);
+        return inventoryResponse;
     }
 }
