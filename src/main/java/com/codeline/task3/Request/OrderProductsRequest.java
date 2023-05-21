@@ -11,6 +11,7 @@ public class OrderProductsRequest {
 
     Integer orderProductsId;
     Integer quantity;
+    String shippingAddress;
     Integer reorderThreshold;
     Integer customerId;
 

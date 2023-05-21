@@ -14,4 +14,6 @@ public class InventoryRequest {
     String inventoryLocation;
 
 
+
+
 }

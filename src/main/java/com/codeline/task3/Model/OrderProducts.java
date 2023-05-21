@@ -16,7 +16,10 @@ public class OrderProducts extends BaseEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     Integer orderProductsId;
+
     Integer quantity;
+
+    String shippingAddress;
     Integer reorderThreshold;
 
     @ManyToOne //many order one customer

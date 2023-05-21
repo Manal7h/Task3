@@ -20,6 +20,7 @@ public class OrderProductsService {
     public String createOrderProducts(OrderProductsRequest request) {
         OrderProducts orderProducts = new OrderProducts();
         orderProducts.setQuantity(request.getQuantity());
+        orderProducts.setShippingAddress(request.getShippingAddress());
         orderProducts.setReorderThreshold(request.getReorderThreshold());
         Customer customer = customerRepository.findById(request.getCustomerId()).get();
         orderProducts.setCustomer(customer);

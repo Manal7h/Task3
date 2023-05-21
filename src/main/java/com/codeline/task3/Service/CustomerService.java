@@ -2,6 +2,7 @@ package com.codeline.task3.Service;
 import com.codeline.task3.Model.Customer;
 import com.codeline.task3.Repository.CustomerRepository;
 import com.codeline.task3.Request.CustomerRequest;
+import com.codeline.task3.Response.CustomerResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.Date;
@@ -22,5 +23,11 @@ public class CustomerService {
         customer.setCreatedDate(new Date());
         customerRepository.save(customer);
         return "Customer Created Successfully";
+    }
+
+    public CustomerResponse getCustomerIdById(CustomerRequest request) {
+        Customer customer = customerRepository.findById(request.getCustomerId()).get();
+        CustomerResponse customerResponse = CustomerResponse.convertToResponse(customer);
+        return customerResponse;
     }
 }
