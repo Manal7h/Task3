@@ -2,9 +2,11 @@ package com.codeline.task3.Service;
 import com.codeline.task3.Model.Customer;
 import com.codeline.task3.Model.Inventory;
 import com.codeline.task3.Model.OrderProducts;
+import com.codeline.task3.Model.Product;
 import com.codeline.task3.Repository.CustomerRepository;
 import com.codeline.task3.Repository.OrderProductsRepository;
 import com.codeline.task3.Request.OrderProductsRequest;
+import com.codeline.task3.Request.ProductRequest;
 import com.codeline.task3.Response.InventoryResponse;
 import com.codeline.task3.Response.OrderProductsResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,5 +44,14 @@ public class OrderProductsService {
         OrderProducts orderProducts = orderProductsRepository.findById(orderProductsId).get();
         OrderProductsResponse orderProductsResponse = OrderProductsResponse.convertToResponse(orderProducts);
         return orderProductsResponse;
+    }
+
+
+    public void deleteOrderProductsById(OrderProductsRequest request) {
+        Customer customer = customerRepository.findById(request.getCustomerId()).get();
+        OrderProducts orderProducts = orderProductsRepository.findById(request.getOrderProductsId()).get();
+        orderProducts.setIsActive(false);
+        orderProducts.setUpdatedDate(new Date());
+        orderProductsRepository.save(orderProducts);
     }
 }
