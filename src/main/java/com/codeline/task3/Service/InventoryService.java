@@ -1,9 +1,11 @@
 package com.codeline.task3.Service;
 import com.codeline.task3.Model.Customer;
 import com.codeline.task3.Model.Inventory;
+import com.codeline.task3.Model.OrderProducts;
 import com.codeline.task3.Repository.InventoryRepository;
 import com.codeline.task3.Request.CustomerRequest;
 import com.codeline.task3.Request.InventoryRequest;
+import com.codeline.task3.Request.OrderProductsRequest;
 import com.codeline.task3.Response.CustomerResponse;
 import com.codeline.task3.Response.InventoryResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,5 +37,12 @@ public class InventoryService {
         Inventory inventory = inventoryRepository.findById(inventoryId).get();
         InventoryResponse inventoryResponse = InventoryResponse.convertToResponse(inventory);
         return inventoryResponse;
+    }
+
+    public void deleteInventoryById(InventoryRequest request) {
+        Inventory inventory = inventoryRepository.findById(request.getInventoryId()).get();
+        inventory.setIsActive(false);
+        inventory.setUpdatedDate(new Date());
+        inventoryRepository.save(inventory);
     }
 }
