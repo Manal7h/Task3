@@ -1,12 +1,13 @@
 package com.codeline.task3.Controller;
 
 import com.codeline.task3.Request.ProductRequest;
+import com.codeline.task3.Response.OrderProductsResponse;
+import com.codeline.task3.Response.ProductResponse;
 import com.codeline.task3.Service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 
@@ -24,5 +25,17 @@ public class ProductController {
             return "Failed create";
         }
         return "create Successfully";
+    }
+
+    @RequestMapping(value = "/getAllProduct" , method = RequestMethod.GET)
+    public List<ProductResponse> getAllProducts() {
+        List<ProductResponse> product = productService.getAllProduct();
+        return product;
+    }
+
+    @RequestMapping(value = "/getProductById" , method = RequestMethod.GET)
+    public ProductResponse getProductById(@RequestParam Integer productId) {
+        ProductResponse productResponse = productService.getProductById(productId);
+        return productResponse;
     }
 }
