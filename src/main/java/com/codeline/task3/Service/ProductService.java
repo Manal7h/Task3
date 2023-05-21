@@ -49,13 +49,15 @@ public class ProductService {
         return productResponse;
     }
 
+    public void deleteProduct(ProductRequest request) {
+        OrderProducts orderProducts = orderProductsRepository.findById(request.getOrderProductsId()).get();
+        Product product = productRepository.findById(request.getProductId()).get();
+        product.setIsActive(false);
+        product.setUpdatedDate(new Date());
+        productRepository.save(product);
+    }
 
 }
-
-
-
-
-
 
 
 
@@ -72,14 +74,3 @@ public class ProductService {
 //        product.setUpdatedDate(new Date());
 //        productRepository.save(product);
 //    }
-//
-//    public void deleteProduct(ProductRequest request) {
-//        Order order = orderRepository.findById(request.getOrderId()).get();
-//        Product product = productRepository.findById(request.getId()).get();
-//        product.setIsActive(false);
-//        product.setUpdatedDate(new Date());
-//        productRepository.save(product);
-//    }
-
-
-
