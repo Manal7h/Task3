@@ -6,9 +6,12 @@ import com.codeline.task3.Repository.InventoryRepository;
 import com.codeline.task3.Repository.OrderProductsRepository;
 import com.codeline.task3.Repository.ProductRepository;
 import com.codeline.task3.Request.ProductRequest;
+import com.codeline.task3.Response.OrderProductsResponse;
+import com.codeline.task3.Response.ProductResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class ProductService {
@@ -34,6 +37,16 @@ public class ProductService {
         product.setCreatedDate(new Date());
         productRepository.save(product);
         return "Product Created Successfully";
+    }
+
+    public List<ProductResponse> getAllProduct() {
+        return ProductResponse.convertToResponseList(productRepository.getAllProduct());
+    }
+
+    public ProductResponse getProductById(Integer productId) {
+        Product product = productRepository.findById(productId).get();
+        ProductResponse productResponse = ProductResponse.convertToResponse(product);
+        return productResponse;
     }
 
 
