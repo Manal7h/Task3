@@ -6,6 +6,9 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Getter
 @Setter
@@ -27,5 +30,14 @@ public class CustomerResponse {
                 .cPhone(request.getCustomerPhone())
                 .cAddress(request.getCustomerAddress())
                 .build();
+    }
+
+    public static List<CustomerResponse> convertToResponseList(List<Customer> request) {
+        List<CustomerResponse> customerResponseList = new ArrayList<>();
+        for (Customer customerRequest : request) {
+            customerResponseList.add(convertToResponse(customerRequest));
+        }
+        return customerResponseList;
+
     }
 }

@@ -28,18 +28,18 @@ public class CustomerService {
         return "Customer Created Successfully";
     }
 
-    //Read Customer By Id
+
+
     public CustomerResponse getCustomerById(CustomerRequest request) {
         Customer customer = customerRepository.findById(request.getCustomerId()).get();
         CustomerResponse customerResponse = CustomerResponse.convertToResponse(customer);
         return customerResponse;
     }
 
-    //Read All Customer
+    //get All Customer
     public List<Customer> getAllCustomer() {
         return customerRepository.getAllCustomer();
     }
-
 
 
 }
