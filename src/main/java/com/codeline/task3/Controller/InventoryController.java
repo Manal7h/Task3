@@ -1,6 +1,7 @@
 package com.codeline.task3.Controller;
 
 import com.codeline.task3.Request.InventoryRequest;
+import com.codeline.task3.Request.OrderProductsRequest;
 import com.codeline.task3.Response.CustomerResponse;
 import com.codeline.task3.Response.InventoryResponse;
 import com.codeline.task3.Service.InventoryService;
@@ -38,5 +39,15 @@ public class InventoryController {
     public InventoryResponse getInventoryById(@RequestParam Integer inventoryId) {
         InventoryResponse inventoryResponse = inventoryService.getInventoryById(inventoryId);
         return inventoryResponse;
+    }
+
+    @RequestMapping(value = "/deleteInventoryById", method = RequestMethod.GET)
+    public String deleteInventoryById(InventoryRequest inventoryRequest){
+        try {
+            inventoryService.deleteInventoryById(inventoryRequest);
+        } catch (Exception e) {
+            return "Failed Delete";
+        }
+        return "Delete Successfully";
     }
 }
