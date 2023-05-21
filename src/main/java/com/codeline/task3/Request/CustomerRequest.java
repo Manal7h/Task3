@@ -12,7 +12,7 @@ public class CustomerRequest {
 
     String customerName;
 
-    Integer customerPhone;
+    String customerPhone;
 
     String customerAddress;
 }

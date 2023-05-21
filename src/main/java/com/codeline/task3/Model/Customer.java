@@ -18,7 +18,7 @@ public class Customer extends BaseEntity{
 
     String customerName;
 
-    Integer customerPhone;
+    String customerPhone;
 
     String customerAddress;
 
