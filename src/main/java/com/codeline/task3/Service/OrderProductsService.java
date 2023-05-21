@@ -1,12 +1,16 @@
 package com.codeline.task3.Service;
 import com.codeline.task3.Model.Customer;
+import com.codeline.task3.Model.Inventory;
 import com.codeline.task3.Model.OrderProducts;
 import com.codeline.task3.Repository.CustomerRepository;
 import com.codeline.task3.Repository.OrderProductsRepository;
 import com.codeline.task3.Request.OrderProductsRequest;
+import com.codeline.task3.Response.InventoryResponse;
+import com.codeline.task3.Response.OrderProductsResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.Date;
+import java.util.List;
 
 
 @Service
@@ -28,5 +32,15 @@ public class OrderProductsService {
         orderProducts.setCreatedDate(new Date());
         orderProductsRepository.save(orderProducts);
         return "Order Created Successfully";
+    }
+
+    public List<OrderProductsResponse> getAllOrderProducts() {
+        return OrderProductsResponse.convertToResponseList(orderProductsRepository.getAllOrderProducts());
+    }
+
+    public OrderProductsResponse getOrderProductsById(Integer orderProductsId) {
+        OrderProducts orderProducts = orderProductsRepository.findById(orderProductsId).get();
+        OrderProductsResponse orderProductsResponse = OrderProductsResponse.convertToResponse(orderProducts);
+        return orderProductsResponse;
     }
 }
