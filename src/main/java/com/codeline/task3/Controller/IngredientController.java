@@ -1,6 +1,7 @@
 package com.codeline.task3.Controller;
 
 import com.codeline.task3.Request.IngredientRequest;
+import com.codeline.task3.Request.InventoryRequest;
 import com.codeline.task3.Service.IngredientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,5 +24,15 @@ public class IngredientController {
             return "Failed create";
         }
         return "create Successfully";
+    }
+
+    @RequestMapping(value = "/deleteIngredientById", method = RequestMethod.GET)
+    public String deleteIngredientById(IngredientRequest ingredientRequest){
+        try {
+            ingredientService.deleteIngredientById(ingredientRequest);
+        } catch (Exception e) {
+            return "Failed Delete";
+        }
+        return "Delete Successfully";
     }
 }
