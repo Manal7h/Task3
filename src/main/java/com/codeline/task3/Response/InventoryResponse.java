@@ -7,6 +7,9 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter
 @Setter
 @Data
@@ -21,5 +24,13 @@ public class InventoryResponse {
         return InventoryResponse.builder()
                 .iLocation(request.getInventoryLocation())
                 .build();
+    }
+
+    public static List<InventoryResponse> convertToResponseList(List<Inventory> request) {
+        List<InventoryResponse> inventoryResponseList = new ArrayList<>();
+        for (Inventory inventoryRequest : request) {
+            inventoryResponseList.add(convertToResponse(inventoryRequest));
+        }
+        return inventoryResponseList;
     }
 }
