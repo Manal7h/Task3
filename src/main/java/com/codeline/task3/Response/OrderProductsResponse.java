@@ -33,8 +33,8 @@ public class OrderProductsResponse {
 
     public static List<OrderProductsResponse> convertToResponseList(List<OrderProducts> request) {
         List<OrderProductsResponse> orderProductsResponseList = new ArrayList<>();
-        for (OrderProducts OrderProductsRequest : request) {
-            orderProductsResponseList.add(convertToResponse(OrderProductsRequest));
+        for (OrderProducts orderProductsRequest : request) {
+            orderProductsResponseList.add(convertToResponse(orderProductsRequest));
         }
         return orderProductsResponseList;
     }
