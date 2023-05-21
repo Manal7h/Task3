@@ -1,4 +1,5 @@
 package com.codeline.task3.Service;
+import com.codeline.task3.Model.Customer;
 import com.codeline.task3.Model.Ingredient;
 import com.codeline.task3.Model.Inventory;
 import com.codeline.task3.Model.Product;
@@ -30,6 +31,7 @@ public class IngredientService {
     }
 
     public void deleteIngredientById(IngredientRequest request) {
+        Product product = productRepository.findById(request.getProductId()).get();
         Ingredient ingredient = ingredientRepository.findById(request.getIngredientId()).get();
         ingredient.setIsActive(false);
         ingredient.setUpdatedDate(new Date());
