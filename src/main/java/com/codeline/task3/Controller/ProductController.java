@@ -38,4 +38,15 @@ public class ProductController {
         ProductResponse productResponse = productService.getProductById(productId);
         return productResponse;
     }
+
+
+    @RequestMapping(value = "/deleteProductById", method = RequestMethod.GET)
+    public String deleteProductById(ProductRequest productRequest){
+        try {
+            productService.deleteProductById(productRequest);
+        } catch (Exception e) {
+            return "Failed Delete";
+        }
+        return "Delete Successfully";
+    }
 }

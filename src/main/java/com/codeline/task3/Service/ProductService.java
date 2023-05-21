@@ -49,7 +49,7 @@ public class ProductService {
         return productResponse;
     }
 
-    public void deleteProduct(ProductRequest request) {
+    public void deleteProductById(ProductRequest request) {
         OrderProducts orderProducts = orderProductsRepository.findById(request.getOrderProductsId()).get();
         Product product = productRepository.findById(request.getProductId()).get();
         product.setIsActive(false);
