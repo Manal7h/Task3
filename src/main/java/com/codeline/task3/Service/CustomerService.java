@@ -1,7 +1,9 @@
 package com.codeline.task3.Service;
 import com.codeline.task3.Model.Customer;
+import com.codeline.task3.Model.Ingredient;
 import com.codeline.task3.Repository.CustomerRepository;
 import com.codeline.task3.Request.CustomerRequest;
+import com.codeline.task3.Request.IngredientRequest;
 import com.codeline.task3.Response.CustomerResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -41,5 +43,12 @@ public class CustomerService {
         Customer customer = customerRepository.findById(customerId).get();
         CustomerResponse customerResponse = CustomerResponse.convertToResponse(customer);
         return customerResponse;
+    }
+
+    public void deleteCustomerById(CustomerRequest request) {
+        Customer customer = customerRepository.findById(request.getCustomerId()).get();
+        customer.setIsActive(false);
+        customer.setUpdatedDate(new Date());
+        customerRepository.save(customer);
     }
 }

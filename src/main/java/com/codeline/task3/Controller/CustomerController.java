@@ -2,6 +2,7 @@ package com.codeline.task3.Controller;
 
 import com.codeline.task3.Model.Customer;
 import com.codeline.task3.Request.CustomerRequest;
+import com.codeline.task3.Request.IngredientRequest;
 import com.codeline.task3.Response.CustomerResponse;
 import com.codeline.task3.Service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +42,16 @@ public class CustomerController {
     public CustomerResponse getCustomerById(@RequestParam Integer customerId) {
        CustomerResponse customerResponse = customerService.getCustomerById(customerId);
         return customerResponse;
+    }
+
+    @RequestMapping(value = "/deleteCustomerById", method = RequestMethod.GET)
+    public String deleteCustomerById(CustomerRequest customerRequest){
+        try {
+            customerService.deleteCustomerById(customerRequest);
+        } catch (Exception e) {
+            return "Failed Delete";
+        }
+        return "Delete Successfully";
     }
 
 
