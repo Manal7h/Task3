@@ -5,6 +5,7 @@ import com.codeline.task3.Repository.InventoryRepository;
 import com.codeline.task3.Request.CustomerRequest;
 import com.codeline.task3.Request.InventoryRequest;
 import com.codeline.task3.Response.CustomerResponse;
+import com.codeline.task3.Response.InventoryResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.Date;
@@ -26,5 +27,13 @@ public class InventoryService {
         return "Inventory Created Successfully";
     }
 
+    public List<InventoryResponse> getAllInventory() {
+        return InventoryResponse.convertToResponseList(inventoryRepository.getAllInventory());
+    }
 
+    public InventoryResponse getInventoryById(Integer inventoryId) {
+        Inventory inventory = inventoryRepository.findById(inventoryId).get();
+        InventoryResponse inventoryResponse = InventoryResponse.convertToResponse(inventory);
+        return inventoryResponse;
+    }
 }
