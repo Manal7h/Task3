@@ -15,6 +15,7 @@ public class InventoryService {
 
     public String createInventory(InventoryRequest request) {
         Inventory inventory = new Inventory();
+        inventory.setInventoryLocation(request.getInventoryLocation());
         inventory.setIsActive(true);
         inventory.setCreatedDate(new Date());
         inventoryRepository.save(inventory);

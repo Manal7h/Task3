@@ -20,7 +20,7 @@ public class Product extends BaseEntity {
 
 //    List<Ingredient> ingredients;
 
-    String price;
+    Double price;
     Integer quantityAvailable;
 
 

@@ -11,5 +11,7 @@ public class InventoryRequest {
 
     Integer inventoryId;
 
+    String inventoryLocation;
+
 
 }

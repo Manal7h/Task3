@@ -17,6 +17,7 @@ public class Inventory extends BaseEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     Integer inventoryId;
+    String inventoryLocation;
 
 
 
