@@ -16,7 +16,6 @@ import java.util.List;
 @Builder
 public class CustomerResponse {
 
-    Integer cId;
 
     String cName;
 

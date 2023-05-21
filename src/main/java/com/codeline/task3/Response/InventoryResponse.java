@@ -16,7 +16,6 @@ import java.util.List;
 @Builder
 public class InventoryResponse {
 
-    Integer iId;
 
     String iLocation;
 
