@@ -27,7 +27,7 @@ public class OrderProductsResponse {
                 .quanti(request.getQuantity())
                 .shippingA(request.getShippingAddress())
                 .reorderT(request.getReorderThreshold())
-                .cId(request.getQuantity())
+                .cId(request.getCustomer().getCustomerId())
                 .build();
     }
 
