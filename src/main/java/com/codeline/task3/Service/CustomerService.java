@@ -30,15 +30,15 @@ public class CustomerService {
 
 
 
-    public CustomerResponse getCustomerById(CustomerRequest request) {
-        Customer customer = customerRepository.findById(request.getCustomerId()).get();
+    public CustomerResponse getCustomerById(Integer customerId) {
+        Customer customer = customerRepository.findById(customerId).get();
         CustomerResponse customerResponse = CustomerResponse.convertToResponse(customer);
         return customerResponse;
     }
 
     //get All Customer
-    public List<Customer> getAllCustomer() {
-        return customerRepository.getAllCustomer();
+    public List<CustomerResponse> getAllCustomer() {
+        return CustomerResponse.convertToResponseList(customerRepository.getAllCustomer());
     }
 
 

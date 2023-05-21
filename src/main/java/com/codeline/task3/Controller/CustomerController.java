@@ -2,6 +2,7 @@ package com.codeline.task3.Controller;
 
 import com.codeline.task3.Model.Customer;
 import com.codeline.task3.Request.CustomerRequest;
+import com.codeline.task3.Response.CustomerResponse;
 import com.codeline.task3.Service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -30,11 +31,16 @@ public class CustomerController {
 
     //get all the Customer (getAllCustomer)
     @RequestMapping(value = "/getAllCustomer" , method = RequestMethod.GET)
-    public List<Customer> getAllCustomer() {
-        List<Customer> customer = customerService.getAllCustomer();
+    public List<CustomerResponse> getAllCustomer() {
+        List<CustomerResponse> customer = customerService.getAllCustomer();
         return customer;
     }
 
+    @RequestMapping(value = "/getCustomerById" , method = RequestMethod.GET)
+    public CustomerResponse getCustomerById(@RequestParam Integer customerId) {
+       CustomerResponse customerResponse = customerService.getCustomerById(customerId);
+        return customerResponse;
+    }
 
 
 
