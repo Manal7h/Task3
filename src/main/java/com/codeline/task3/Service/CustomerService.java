@@ -5,7 +5,10 @@ import com.codeline.task3.Request.CustomerRequest;
 import com.codeline.task3.Response.CustomerResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 
 @Service
@@ -25,9 +28,18 @@ public class CustomerService {
         return "Customer Created Successfully";
     }
 
-    public CustomerResponse getCustomerIdById(CustomerRequest request) {
+    //Read Customer By Id
+    public CustomerResponse getCustomerById(CustomerRequest request) {
         Customer customer = customerRepository.findById(request.getCustomerId()).get();
         CustomerResponse customerResponse = CustomerResponse.convertToResponse(customer);
         return customerResponse;
     }
+
+    //Read All Customer
+    public List<Customer> getAllCustomer() {
+        return customerRepository.getAllCustomer();
+    }
+
+
+
 }
