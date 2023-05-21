@@ -1,12 +1,13 @@
 package com.codeline.task3.Controller;
 
 import com.codeline.task3.Request.OrderProductsRequest;
+import com.codeline.task3.Response.InventoryResponse;
+import com.codeline.task3.Response.OrderProductsResponse;
 import com.codeline.task3.Service.OrderProductsService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 
@@ -25,4 +26,16 @@ public class OrderProductsController {
             }
             return "create Successfully";
         }
+
+    @RequestMapping(value = "/getAllOrderProducts" , method = RequestMethod.GET)
+    public List<OrderProductsResponse> getAllOrderProducts() {
+        List<OrderProductsResponse> orderProducts = orderProductsService.getAllOrderProducts();
+        return orderProducts;
+    }
+
+    @RequestMapping(value = "/getOrderProductsById" , method = RequestMethod.GET)
+    public OrderProductsResponse getOrderProductsById(@RequestParam Integer orderProductsId) {
+        OrderProductsResponse orderProductsResponse = orderProductsService.getOrderProductsById(orderProductsId);
+        return orderProductsResponse;
+    }
 }
