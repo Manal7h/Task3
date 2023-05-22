@@ -10,4 +10,10 @@ class IngredientControllerTest {
     @Autowired
     IngredientController ingredientController;
 
+    @Test
+    void getIngredientById() throws Exception{
+        String ingredientName = ingredientController.getIngredientById(1).getIName();
+        assertEquals("cocoa",ingredientName);
+    }
+
 }
