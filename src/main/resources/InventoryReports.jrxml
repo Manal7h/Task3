@@ -82,7 +82,7 @@
             <line>
                 <reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="e4a60b29-94af-4d25-bece-77be16d88ac5"/>
             </line>
-            <textField textAdjust="StretchHeight">
+            <textField>
                 <reportElement x="5" y="0" width="185" height="20" uuid="d16a06f6-fc8f-4d95-9226-1487b1a5f3c2">
                     <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c78b9cd2-51ac-48a3-b0a9-a6a12828b99d"/>
                 </reportElement>
@@ -91,7 +91,7 @@
                 </textElement>
                 <textFieldExpression><![CDATA[$F{productId}]]></textFieldExpression>
             </textField>
-            <textField textAdjust="StretchHeight">
+            <textField>
                 <reportElement x="198" y="0" width="185" height="20" uuid="6ff237a0-86a5-481f-9635-a73b929afbbf">
                     <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="893d6960-f5ac-4251-bbcd-50dba9b003ed"/>
                 </reportElement>
@@ -100,7 +100,7 @@
                 </textElement>
                 <textFieldExpression><![CDATA[$F{productName}]]></textFieldExpression>
             </textField>
-            <textField textAdjust="StretchHeight">
+            <textField>
                 <reportElement x="380" y="0" width="185" height="20" uuid="9b963f53-b00f-4566-ba14-c14523989fb1">
                     <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7bdc75d1-0add-4d7c-9c73-d00b7ea65412"/>
                 </reportElement>
@@ -109,7 +109,7 @@
                 </textElement>
                 <textFieldExpression><![CDATA[$F{quantityAvailable}]]></textFieldExpression>
             </textField>
-            <textField textAdjust="StretchHeight">
+            <textField>
                 <reportElement x="380" y="0" width="185" height="20" uuid="9b963f53-b00f-4566-ba14-c14523989fb1">
                     <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7bdc75d1-0add-4d7c-9c73-d00b7ea65412"/>
                 </reportElement>
