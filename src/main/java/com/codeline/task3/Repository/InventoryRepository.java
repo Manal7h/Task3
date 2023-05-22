@@ -14,4 +14,10 @@ public interface InventoryRepository extends JpaRepository<Inventory,Integer> {
 
     @Query("SELECT i from Inventory i where i.id= :inventoryId")
     Inventory getInventoryById(@Param("inventoryId") Integer id);
+
+    @Query("select i from Inventory i where i.isActive = 1")
+    List<Inventory> getAllActiveInventory();
+
+    @Query("select i from Inventory i where i.isActive = 0")
+    List<Inventory> getAllInActiveInventory();
 }
