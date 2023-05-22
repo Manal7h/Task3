@@ -30,10 +30,6 @@ public class CustomerService {
         return "Customer Created Successfully";
     }
 
-
-
-
-
     //get All Customer
     public List<CustomerResponse> getAllCustomer() {
         return CustomerResponse.convertToResponseList(customerRepository.getAllCustomer());
