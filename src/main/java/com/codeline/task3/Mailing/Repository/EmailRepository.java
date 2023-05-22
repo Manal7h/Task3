@@ -6,8 +6,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface EmailRepository {
 
-    String sendSimpleMailToMany(EmailDetails emailDetails);
+
     String sendSimpleMail(EmailDetails emailDetails);
-    String sendMailWithAttachmentToMany(EmailDetails emailDetails);
-    String sendMailWithAttachment(EmailDetails emailDetails);
+
+
 }
