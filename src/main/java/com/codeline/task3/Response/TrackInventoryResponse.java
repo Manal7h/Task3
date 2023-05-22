@@ -10,4 +10,7 @@ import lombok.Setter;
 @Data
 @Builder
 public class TrackInventoryResponse {
+
+    String iLocation;
+
 }
