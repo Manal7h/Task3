@@ -12,5 +12,7 @@ import lombok.Setter;
 public class TrackInventoryResponse {
 
     String iLocation;
+    Integer quantityA;
+
 
 }
