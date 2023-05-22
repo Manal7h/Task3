@@ -41,6 +41,14 @@ public class IngredientService {
         ingredientRepository.save(ingredient);
     }
 
+    public List<IngredientResponse> getAllIngredient() {
+        return IngredientResponse.convertToResponseList(ingredientRepository.getAllIngredient());
+    }
 
+    public IngredientResponse getIngredientById(Integer ingredientId) {
+        Ingredient ingredient = ingredientRepository.findById(ingredientId).get();
+        IngredientResponse ingredientResponse = IngredientResponse.convertToResponse(ingredient);
+        return ingredientResponse;
+    }
 
 }

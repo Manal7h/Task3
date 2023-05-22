@@ -2,12 +2,13 @@ package com.codeline.task3.Controller;
 
 import com.codeline.task3.Request.IngredientRequest;
 import com.codeline.task3.Request.InventoryRequest;
+import com.codeline.task3.Response.IngredientResponse;
+import com.codeline.task3.Response.InventoryResponse;
 import com.codeline.task3.Service.IngredientService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 
@@ -26,6 +27,8 @@ public class IngredientController {
         return "create Successfully";
     }
 
+
+
     @RequestMapping(value = "/deleteIngredientById", method = RequestMethod.GET)
     public String deleteIngredientById(IngredientRequest ingredientRequest){
         try {
@@ -35,4 +38,18 @@ public class IngredientController {
         }
         return "Delete Successfully";
     }
+
+    @RequestMapping(value = "/getAllIngredient" , method = RequestMethod.GET)
+    public List<IngredientResponse> getAllIngredient() {
+        List<IngredientResponse> ingredient = ingredientService.getAllIngredient();
+        return ingredient;
+    }
+
+    @RequestMapping(value = "/getIngredientById" , method = RequestMethod.GET)
+    public IngredientResponse getIngredientById(@RequestParam Integer ingredientId) {
+        IngredientResponse ingredientResponse = ingredientService.getIngredientById(ingredientId);
+        return ingredientResponse;
+    }
+
+
 }
