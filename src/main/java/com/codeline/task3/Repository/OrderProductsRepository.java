@@ -14,4 +14,6 @@ public interface OrderProductsRepository extends JpaRepository<OrderProducts,Int
 
     @Query("SELECT o from OrderProducts o where o.id= :orderProductsId")
     OrderProducts getOrderProductsById(@Param("orderProductsId") Integer id);
+
+
 }

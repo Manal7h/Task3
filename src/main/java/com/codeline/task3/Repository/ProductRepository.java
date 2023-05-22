@@ -1,5 +1,6 @@
 package com.codeline.task3.Repository;
 
+import com.codeline.task3.Model.OrderProducts;
 import com.codeline.task3.Model.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -25,4 +26,7 @@ public interface ProductRepository extends JpaRepository<Product,Integer> {
 
     @Query("select p from Product p where p.inventory.id = :inventoryId")
     List<Product> getAllProductsByInventoryId(@Param("inventoryId") Integer inventoryId);
+
+    @Query(value = "select * from Product where created_Date Like Concat (?1,%)", nativeQuery = true)
+    List<Product> getAllProductByCreatedDate(@Param("createdDate") String createdDate);
 }

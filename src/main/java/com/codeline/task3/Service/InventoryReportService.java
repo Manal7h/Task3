@@ -60,6 +60,7 @@ public class InventoryReportService {
 
         }
         JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(inventoryReport);
+        return "Report generated : " + pathToReports + "\\InventoryReports.pdf";
 
         }
 
