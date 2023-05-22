@@ -1,15 +1,11 @@
 package com.codeline.task3.Response;
 
-import com.codeline.task3.Model.Customer;
-import com.codeline.task3.Model.Inventory;
 import com.codeline.task3.Model.OrderProducts;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,4 +1,5 @@
 package com.codeline.task3.Service;
+
 import com.codeline.task3.Model.Inventory;
 import com.codeline.task3.Model.OrderProducts;
 import com.codeline.task3.Model.Product;
@@ -6,12 +7,10 @@ import com.codeline.task3.Repository.InventoryRepository;
 import com.codeline.task3.Repository.OrderProductsRepository;
 import com.codeline.task3.Repository.ProductRepository;
 import com.codeline.task3.Request.ProductRequest;
-import com.codeline.task3.Response.OrderProductsResponse;
 import com.codeline.task3.Response.ProductResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -64,9 +63,10 @@ public class ProductService {
         List<Product> products = productRepository.findAll();
 
         for (Product product : products) {
-
-                product.setIsActive(false);
-                productRepository.save(product);
+            Integer inventoryLevels = product.getQuantityAvailable() - product.getOrderProducts().getQuantity();
+            product.setIsActive(false);
+            product.setUpdatedDate(new Date());
+            productRepository.save(product);
 
         }
     }

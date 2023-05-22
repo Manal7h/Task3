@@ -1,6 +1,5 @@
 package com.codeline.task3.Response;
 
-import com.codeline.task3.Model.OrderProducts;
 import com.codeline.task3.Model.Product;
 import lombok.Builder;
 import lombok.Data;

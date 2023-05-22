@@ -1,14 +1,10 @@
 package com.codeline.task3.Service;
-import com.codeline.task3.Model.Customer;
+
 import com.codeline.task3.Model.Inventory;
-import com.codeline.task3.Model.OrderProducts;
 import com.codeline.task3.Model.Product;
 import com.codeline.task3.Repository.InventoryRepository;
 import com.codeline.task3.Repository.ProductRepository;
-import com.codeline.task3.Request.CustomerRequest;
 import com.codeline.task3.Request.InventoryRequest;
-import com.codeline.task3.Request.OrderProductsRequest;
-import com.codeline.task3.Response.CustomerResponse;
 import com.codeline.task3.Response.InventoryResponse;
 import com.codeline.task3.Response.ProductsInventoryResponse;
 import com.codeline.task3.Response.TrackInventoryResponse;
