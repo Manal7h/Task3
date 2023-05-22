@@ -7,9 +7,12 @@ import com.codeline.task3.Repository.IngredientRepository;
 import com.codeline.task3.Repository.ProductRepository;
 import com.codeline.task3.Request.IngredientRequest;
 import com.codeline.task3.Request.InventoryRequest;
+import com.codeline.task3.Response.IngredientResponse;
+import com.codeline.task3.Response.InventoryResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class IngredientService {
@@ -37,5 +40,7 @@ public class IngredientService {
         ingredient.setUpdatedDate(new Date());
         ingredientRepository.save(ingredient);
     }
+
+
 
 }
