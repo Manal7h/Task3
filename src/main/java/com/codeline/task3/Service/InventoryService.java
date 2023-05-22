@@ -49,21 +49,5 @@ public class InventoryService {
         inventory.setUpdatedDate(new Date());
         inventoryRepository.save(inventory);
     }
-//
-//    public List<TrackInventoryResponse> trackInventoryLevels() {
-//        List<TrackInventoryResponse> trackInventoryResponse = new ArrayList<>();
-//        List<Inventory> getAllInventory = inventoryRepository.getAllActiveInventory();
-//
-//
-//        for (Inventory inventory : getAllInventory) {
-//            List<Product> getAllProductsByInventoryId = productRepository.getAllProductsByInventoryId(inventory.getInventoryId());
-//            List<ProductsInventoryResponse> productsInventoryResponse = ProductsInventoryResponse.convertToResponseList(getAllProductsByInventoryId);
-//            TrackInventoryResponse inventoryResponse = new TrackInventoryResponse();
-//            inventoryResponse.setInventoryLocation(inventory.getInventoryLocation());
-//            inventoryResponse.setProductList(productsInventoryResponse);
-//            trackInventoryResponse.add(inventoryResponse);
-//        }
-//        return trackInventoryResponse;
-//
-//    }
+
 }
