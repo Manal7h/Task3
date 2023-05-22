@@ -3,7 +3,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="StudentReport" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b36614ad-c2a1-4fea-91e6-43edd2384123">
 
 
-    <field name="productId" class="java.lang.Integer"/>
+    <field name="inventoryLocation" class="java.lang.String"/>
     <field name="productName" class="java.lang.String"/>
     <field name="quantityAvailable" class="java.lang.Integer"/>
     <field name="reorderThreshold" class="java.lang.Integer"/>
@@ -46,7 +46,7 @@
                 <textElement textAlignment="Center">
                     <font size="14" isBold="true"/>
                 </textElement>
-                <text><![CDATA[productId]]></text>
+                <text><![CDATA[inventoryLocation]]></text>
             </staticText>
             <staticText>
                 <reportElement mode="Opaque" x="185" y="0" width="185" height="20" forecolor="#032233" backcolor="#E6E6E6" uuid="32bdd2e9-d5db-4c3f-ba1c-d071188c77c2">
@@ -89,7 +89,7 @@
                 <textElement>
                     <font size="14"/>
                 </textElement>
-                <textFieldExpression><![CDATA[$F{productId}]]></textFieldExpression>
+                <textFieldExpression><![CDATA[$F{inventoryLocation}]]></textFieldExpression>
             </textField>
             <textField>
                 <reportElement x="198" y="0" width="185" height="20" uuid="6ff237a0-86a5-481f-9635-a73b929afbbf">

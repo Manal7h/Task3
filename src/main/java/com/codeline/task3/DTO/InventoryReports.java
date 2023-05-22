@@ -8,16 +8,15 @@ import lombok.Setter;
 @Getter
 @Data
 public class InventoryReports {
-
-    Integer productId;
+String inventoryLocation;
     String productName;
     Integer quantityAvailable;
     Integer reorderThreshold;
 
-    public InventoryReports(Integer productId, String productName, Integer quantityAvailable, Integer reorderThreshold) {
-        this.productId = productId;
-        this.productName = productName;
-        this.quantityAvailable = quantityAvailable;
-        this.reorderThreshold = reorderThreshold;
-    }
+//    public InventoryReports(String inventoryLocation, String productName, Integer quantityAvailable, Integer reorderThreshold) {
+//        this.inventoryLocation = inventoryLocation;
+//        this.productName = productName;
+//        this.quantityAvailable = quantityAvailable;
+//        this.reorderThreshold = reorderThreshold;
+//    }
 }
