@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @Data
@@ -13,6 +15,8 @@ public class TrackInventoryResponse {
 
     String iLocation;
     Integer quantityA;
+
+    List<ProductsInventoryResponse> productsInventoryResponseList;
 
 
 }
