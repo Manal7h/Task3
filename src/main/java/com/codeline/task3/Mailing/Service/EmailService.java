@@ -21,7 +21,7 @@ public class EmailService implements EmailRepository{
 
 
 
-    public String sendSimpleMail(EmailDetails details) {
+    public String sendSimpleMail(EmailDetails emailDetails) {
 
         // Try block to check for exceptions
         try {
@@ -31,18 +31,18 @@ public class EmailService implements EmailRepository{
 
             // Setting up necessary details
             mailMessage.setFrom(sender);
-            mailMessage.setTo(details.getRecipient().get(0));
-            mailMessage.setText(details.getMgBody());
-            mailMessage.setSubject(details.getSubject());
+            mailMessage.setTo(emailDetails.getRecipient().get(0));
+            mailMessage.setText(emailDetails.getMgBody());
+            mailMessage.setSubject(emailDetails.getSubject());
 
             // Sending the mail
             mailSender.send(mailMessage);
-            return "Mail Sent Successfully.. :)";
+            return "Mail Sent Successfully:)";
         }
 
         // Catch block to handle the exceptions
         catch (Exception e) {
-            return "Error while Sending Mail Please try again :(";
+            return "Error while Sending Mail Please try again";
         }
     }
 

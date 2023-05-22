@@ -12,15 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "email")
 public class EmailController {
     @Autowired
-    private EmailService emailService;
+    EmailService emailService;
 
     // Sending a simple Email
-    @PostMapping("/sendMail")
-    public String
-    sendMail(@RequestBody EmailDetails details) {
-        String status = emailService.sendSimpleMail(details);
+    @PostMapping(value ="/sendMail")
+    public String sendSimpleMail(@RequestBody EmailDetails emailDetails) {
+        String mail = emailService.sendSimpleMail(emailDetails);
 
-        return status;
+        return mail;
     }
 
 }
