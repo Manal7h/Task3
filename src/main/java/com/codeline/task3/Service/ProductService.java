@@ -10,6 +10,8 @@ import com.codeline.task3.Response.OrderProductsResponse;
 import com.codeline.task3.Response.ProductResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -57,20 +59,20 @@ public class ProductService {
         productRepository.save(product);
     }
 
+
+    public void upInventoryLevels(){
+        List<Product> products = productRepository.findAll();
+
+        for (Product product : products) {
+
+                product.setIsActive(false);
+                productRepository.save(product);
+
+        }
+    }
+
 }
 
 
 
 
-
-
-//    public void updateProduct(ProductRequest request) {
-//        Product product = productRepository.findById(request.getId()).get();
-//        product.setName(request.getName());
-//        product.setIngredients(request.getIngredients());
-//        product.setPrice(request.getPrice());
-//        product.setQuantity(request.getQuantity());
-//        Order order = orderRepository.findById(request.getOrdertId()).get();
-//        product.setUpdatedDate(new Date());
-//        productRepository.save(product);
-//    }
