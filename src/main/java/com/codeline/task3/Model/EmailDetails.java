@@ -1,4 +1,4 @@
-package com.codeline.task3.Mailing.Model;
+package com.codeline.task3.Model;
 
 import lombok.*;
 

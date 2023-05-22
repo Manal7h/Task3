@@ -1,14 +1,12 @@
-package com.codeline.task3.Mailing.Service;
+package com.codeline.task3.Service;
 
-import com.codeline.task3.Mailing.Model.EmailDetails;
-import com.codeline.task3.Mailing.Repository.EmailRepository;
+import com.codeline.task3.Model.EmailDetails;
+import com.codeline.task3.Repository.EmailRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class EmailService implements EmailRepository{

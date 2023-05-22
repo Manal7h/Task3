@@ -1,7 +1,7 @@
 package com.codeline.task3.Controller;
 
-import com.codeline.task3.Mailing.Model.EmailDetails;
-import com.codeline.task3.Mailing.Service.EmailService;
+import com.codeline.task3.Model.EmailDetails;
+import com.codeline.task3.Service.EmailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

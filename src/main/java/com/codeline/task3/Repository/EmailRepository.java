@@ -1,6 +1,6 @@
-package com.codeline.task3.Mailing.Repository;
+package com.codeline.task3.Repository;
 
-import com.codeline.task3.Mailing.Model.EmailDetails;
+import com.codeline.task3.Model.EmailDetails;
 import org.springframework.stereotype.Repository;
 
 @Repository
